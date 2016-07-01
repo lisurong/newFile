@@ -1,0 +1,111 @@
+@charset "utf-8";
+/*************************************
+* author:Lisurong
+* content:reset css,base css and template css
+************************************/
+body {
+	background:#fff;
+	background-attachment:fixed;
+	background-image:none;
+	margin:0;
+	padding:0;
+	color:#000;
+	font-family:Arial,'\5B8B\4F53',"Microsoft YaHei","微软雅黑";
+	font-size:14px;
+	line-height:21px;
+	word-break: break-all;
+}
+/*重置*/
+div, form, p, i, img, ul, li, ol, dl, dt, dd, table, tr, td, th, fieldset, label, legend, select, button, input {
+	margin:0;
+	padding:0;
+}
+p,li,div{
+	line-height:20px;
+}
+/*table*/
+table{
+	border-collapse:collapse;
+}
+/*标题样式*/
+h1, h2, h3, h4, h5, h6 {
+	margin:0;
+	padding:0;
+	font-size:12px;
+	font-weight:normal;
+	font-weight:normal;
+}
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {
+	margin: 0
+}
+/*列表样式*/
+ul, li, dl, dt, dd {
+	list-style:none;
+}
+ol li{
+	list-style:decimal;
+}
+em,i,strong{
+	font-style:normal;
+}
+/*图片样式*/
+img, a img {
+	vertical-align:middle;
+	border:none;
+	
+}
+/*链接样式*/
+a{
+	color:#fff;
+	text-decoration:none;
+	outline: none;
+	cursor:pointer;
+}
+a:hover {
+	text-decoration: underline;
+	color: #44acf5;
+	cursor:pointer;
+}
+/*清除浮动*/
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	font-size:0;
+	line-height:0;
+	clear: both;
+	visibility: hidden;
+}
+*html .clearfix {
+	height: 1%;
+}
+.clearfix {
+	clear:both;
+	display:block;
+	height: 0;
+	font-size:0;
+	line-height:0;
+}
+.clear {
+	clear:both;
+}
+/*清楚浮动2*/
+.overflow {
+	overflow:hidden;
+	_zoom:1;
+}
+/*隐藏*/
+.hidden {
+	display:none;
+}
+/*浮动*/
+.floatL{ float: left;}
+.floatR{ float: right;}
+
+input,select{
+	height: 35px;
+	line-height: 35px;
+	border: 1px solid #e6e6e6;
+	vertical-align: middle;
+}
+

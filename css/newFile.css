@@ -1,0 +1,90 @@
+@charset "utf-8";
+.n_main{
+	width: 1210px;
+	margin: 0 auto;
+	margin-top: 50px;
+	padding: 20px;
+	border: 1px solid #e6e6e6;
+}
+.n_input450{
+	width: 450px;	
+	margin-left: 10px;
+}
+.n_input230{
+	width: 230px;
+}
+.n_sel{
+	width: 200px;
+}
+.n_div_t{
+	margin-bottom: 20px;
+}
+.n_main .red{
+	color: #ff0707;
+}
+
+.n_box{
+	
+}
+.n_head{
+	padding-left: 60px;
+	padding-top: 6px;
+	position: relative;
+	height: 44px;
+	background: #69bd69 url(../images/n_title_1.gif) no-repeat 0 0;
+}
+
+.span_t{
+	color: #fff;
+}
+.n_r_btn{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+.n_r_btn a{
+	background: url(../images/n-icon.gif) no-repeat;
+	display: inline-block;
+	width: 38px;
+	height: 32px;
+}
+.n_r_btn a.n_zk{
+	background-position: 0 0;
+}
+.n_r_btn a.n_zk{
+	background-position: 0 -34px;
+}
+.body_span{
+	height: 45px;
+	line-height: 45px;
+	border: 1px solid #ddd;
+}
+.body_bt{
+	background: #f0f0f0;
+	font-weight: bold;	
+}
+.body_span span{
+	display: inline-block;
+	text-align: center;
+	width: 19%;
+	color: #686b71;
+}
+.body_span span.span_last{
+	vertical-align: middle;
+}
+.body_con{
+	padding-left: 3px;
+}
+.n_add{
+	margin-left: 10px;
+	color: #4c8ec2;
+	font-weight: bold;;
+}
+.n_add:hover{
+	text-decoration: none;
+}
+.span_last a{
+	display: inline-block;
+	width: 20px;
+	height: 21px;
+}
