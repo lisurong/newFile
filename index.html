@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>新建作业</title>
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/newFile.css">
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/template.js"></script>
+</head>
+<body>
+<div class="n_main">
+    <div class="n_div_t">
+        <span><i class="red">*</i>&nbsp;作业名称：</span><input text="text" class="n_input450"/>
+    </div>
+
+    <div id="n_boxs" class="n_boxs">
+    </div>
+
+    <div class="n_add_box" id="n_add_box">
+        <a class="add_rw" href="javascript:;">+&nbsp;添加任务</a>
+        <div class="rw_xl" style="display:none;">
+            <a href="javascript:;" class="add_by_file">添加传输文件</a>
+            <a href="javascript:;" class="add_shell">添加脚本</a>
+        </div>
+    </div>
+    <div class="n_b">
+        <a class="add_rw" href="javascript:;">保存</a>
+        <a class="add_rw" href="javascript:;">去执行</a>
+    </div>
+</div>
+</body>
+</html>
+<!--脚本下拉内容模板-->
+<script id="tpl-shell" type="text/html">
+<div class="body_span body_bt">
+    <span><i class="red">*</i>&nbsp;脚本名称</span>
+    <span><i class="red">*</i>&nbsp;执行账户</span>
+    <span><i class="red">*</i>&nbsp;服务器数</span>
+    <span><i class="red">*</i>&nbsp;脚本参数</span>
+    <span class="span_last"><i class="red">*</i>&nbsp;操作</span>
+</div>
+<div class="body_span body_con">
+    <div class="n_par">
+        <span><input text="text" class="shell_name n_input230"/></span>
+        <span>
+            <select class="n_sel">
+                <option>tomcat</option>
+                <option>tomcat</option>
+                <option>tomcat</option>
+            </select>
+        </span>
+        <span><input text="text" class="n_input230"/></span>
+        <span><input text="text" class="n_input230"/></span>
+        <span class="span_last"><input type="checkbox"/>&nbsp;完成后暂停<a href="javascript:;" class="n_bj" style="color:#000;">编辑</a><a href="javascript:;" class="n_del2"></a></span>
+    </div>
+    <div class="n_child" style="display:{{display}};">
+        <div class="n_btn">
+            <table>
+                <tr>
+                    <th><i class="red">*</i>&nbsp;脚本名称：</th>
+                    <td>
+                        <label><input type="radio" name="1" />手动输入</label>
+                        <label><input type="radio" name="1" />脚本克隆</label>
+                        <label><input type="radio" name="1" />本地脚本</label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="n_concent">
+            <table>
+                <tr>
+                    <th><i class="red">*</i>&nbsp;脚本名称：</th>
+                    <td><input type="text" class="n_input450" /></td>
+                </tr>
+                <tr>
+                    <th><i class="red">*</i>&nbsp;脚本名称：</th>
+                    <td><input type="text" class="n_input450" /></td>
+                </tr>
+                <tr>
+                    <th><i class="red">*</i>&nbsp;脚本名称：</th>
+                    <td><input type="text" class="n_input450" /></td>
+                </tr>
+            </table>
+        </div> 
+    </div>
+</div>
+</script>
+<!--文件下拉内容模板-->
+<script id="tpl-file" type="text/html">
+<div class="body_span body_bt">
+    <span><i class="red">*</i>&nbsp;任务名称</span>
+    <span><i class="red">*</i>&nbsp;执行账户</span>
+    <span><i class="red">*</i>&nbsp;服务器数</span>
+    <span><i class="red">*</i>&nbsp;目标路径</span>
+    <span class="span_last"><i class="red">*</i>&nbsp;操作</span>
+</div>
+<div class="body_span body_con">
+    <div class="n_par">
+        <span><input text="text" class="shell_name n_input230"/></span>
+        <span>
+            <select class="n_sel">
+                <option>tomcat</option>
+                <option>tomcat</option>
+                <option>tomcat</option>
+            </select>
+        </span>
+        <span><input text="text" class="n_input230"/></span>
+        <span><input text="text" class="n_input230"/></span>
+        <span class="span_last"><input type="checkbox"/>&nbsp;完成后暂停<a href="javascript:;" class="n_bj" style="color:#000;">编辑</a><a href="javascript:;" class="n_del2"></a></span>
+    </div>
+    <div class="n_child" style="display:{{display}};">
+        <div class="n_btn">
+            <table>
+                <tr>
+                    <th><i class="red">*</i>&nbsp;文件名称：</th>
+                    <td>
+                        <label><input type="radio" name="1" />手动输入</label>
+                        <label><input type="radio" name="1" />脚本克隆</label>
+                        <label><input type="radio" name="1" />本地脚本</label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="n_concent">
+            <table>
+                <tr>
+                    <th><i class="red">*</i>&nbsp;脚本名称：</th>
+                    <td><input type="text" class="n_input450" /></td>
+                </tr>
+                <tr>
+                    <th><i class="red">*</i>&nbsp;脚本名称：</th>
+                    <td><input type="text" class="n_input450" /></td>
+                </tr>
+                <tr>
+                    <th><i class="red">*</i>&nbsp;脚本名称：</th>
+                    <td><input type="text" class="n_input450" /></td>
+                </tr>
+            </table>
+        </div> 
+    </div>
+</div>
+</script>
+<!--添加任务模板-->
+<script id="tpl" type="text/html">
+    <div class="n_box">
+        <div class="n_head {{type}}">
+            <div class="n_div_t">
+                <span class="span_t"><i class="red">*</i>&nbsp;步骤名称：</span><input text="text" class="n_input230"/>
+            </div>
+            <div class="n_r_btn">
+                <a href="javascript:;" class="n_zk"></a>
+                <a href="javascript:;" class="n_del"></a>
+            </div>
+        </div>
+        <div class="n_body">           
+            {{if type == 'file'}}
+                {{include 'tpl-file' $value}}
+            {{/if}}
+
+            {{if type == 'shell'}}
+                {{include 'tpl-shell' $value}}
+            {{/if}} 
+            <div class="body_span body_bt">
+                <a class="n_add {{type}}">+&nbsp;新增节点</a>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/javascript">  
+$(document).ready(function(){
+
+    //选择新增任务
+    $(document).on('click', '.add_rw', function(){
+        var display = $(this).siblings('.rw_xl').css('display');
+        if(display == 'none'){
+            $(this).siblings('.rw_xl').css('display','block');
+        }else{
+            $(this).siblings('.rw_xl').css('display','none');
+        }
+    })
+    //点击添加文件
+    $(document).on('click', '.add_by_file', function(){
+        var html = template('tpl', {
+            //如果需要初始化数据，在这添加更多
+            type: 'file', // file or shell
+            display: 'none'
+        });
+        $('#n_boxs').append(html);
+    })
+    //点击添加脚本
+    $(document).on('click', '.add_shell', function(){
+        var html = template('tpl', {
+            type: 'shell', // file or shell,
+            display: 'none'
+        });
+        $('#n_boxs').append(html);
+    })
+    //点击脚本名称，编辑，展开收起
+    $(document).on('click', '.shell_name,.n_bj,.n_zk', function(){
+        $('.n_child').hide();
+        $(this).parents('.body_span').find('.n_child').show();
+    })
+    //添加节点
+    $(document).on('click', '.n_add', function(){
+        var type = $(this).hasClass('file');
+        //console.log(type);
+        if(type){
+            var html = template('tpl-file', {
+                display: 'none'
+            });
+            $(this).parents('.n_body').find('.body_con').after(html);
+        }else{
+            var html = template('tpl-file', {
+                display: 'none'
+            });
+            $(this).parents('.n_body').find('.body_con').after(html);
+        }
+    })
+
+
+
+    
+})
+</script>
+
+
+

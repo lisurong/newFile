@@ -24,7 +24,7 @@
 }
 
 .n_box{
-	
+	margin-bottom: 10px;
 }
 .n_head{
 	padding-left: 60px;
@@ -32,6 +32,10 @@
 	position: relative;
 	height: 44px;
 	background: #69bd69 url(../images/n_title_1.gif) no-repeat 0 0;
+}
+
+.n_head.file{
+	background: #6A97D0 url(../images/n_title_2.gif) no-repeat 0 0;
 }
 
 .span_t{
@@ -59,6 +63,13 @@
 	line-height: 45px;
 	border: 1px solid #ddd;
 }
+.n_par{
+	border: 1px solid #ddd;
+	padding: 3px;
+}
+.n_child{
+	padding: 10px;
+}
 .body_bt{
 	background: #f0f0f0;
 	font-weight: bold;	
@@ -73,7 +84,8 @@
 	vertical-align: middle;
 }
 .body_con{
-	padding-left: 3px;
+	height: auto;
+	line-height: auto;
 }
 .n_add{
 	margin-left: 10px;
@@ -87,4 +99,35 @@
 	display: inline-block;
 	width: 20px;
 	height: 21px;
+}
+.add_rw{
+	background: #69bd69;
+	line-height: 40px;
+	padding: 0 20px;
+	display: inline-block;
+	margin-top: 20px;
+}
+.add_rw:hover{
+	text-decoration: none;
+	color: #fff;
+}
+.n_b{
+	text-align: center;
+}
+.n_add_box{
+	height: 150px;
+}
+.rw_xl{
+	background: #fff;
+	border: 1px solid #ddd;
+	width: 130px;
+}
+.rw_xl a{
+	display: block;
+	color: #333;
+	padding: 6px 12px;
+}
+.rw_xl a:hover{
+	background: #ddd;
+	text-decoration: none;
 }
