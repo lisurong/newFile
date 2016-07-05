@@ -12,50 +12,248 @@
     <div class="n_div_t">
         <span><i class="red">*</i>&nbsp;作业名称：</span><input text="text" class="n_input450"/>
     </div>
+    <!--脚本步骤开始-->
     <div class="n_box">
-        <div class="n_head">
+        <div class="n_head shell">
             <div class="n_div_t">
-                <span class="span_t"><i class="red">*</i>&nbsp;步骤名称：</span><input text="text" class="n_input230"/>
+                <span class="span_t"><i class="red">*</i>&nbsp;步骤名称：</span><input class="n_input230" text="text">
             </div>
             <div class="n_r_btn">
-                <a href="javascript:;" class="n_zk"></a>
-                <a href="javascript:;" class="n_del"></a>
+                <a class="n_zk" href="javascript:;"></a>
+                <a onclick="del(this,'n_box')" id="n_del" class="n_del" href="javascript:;"></a>
             </div>
+        </div>        
+         <div class="body_span body_bt">
+            <span><i class="red">*</i>&nbsp;脚本名称</span>
+            <span><i class="red">*</i>&nbsp;执行账户</span>
+            <span><i class="red">*</i>&nbsp;服务器数</span>
+            <span><i class="red">*</i>&nbsp;脚本参数</span>
+            <span class="span_last"><i class="red">*</i>&nbsp;操作</span>
         </div>
-        <div class="n_body">
-            <div class="body_span body_bt">
-                <span><i class="red">*</i>&nbsp;脚本名称</span>
-                <span><i class="red">*</i>&nbsp;执行账户</span>
-                <span><i class="red">*</i>&nbsp;服务器数</span>
-                <span><i class="red">*</i>&nbsp;脚本参数</span>
-                <span class="span_last"><i class="red">*</i>&nbsp;操作</span>
-            </div>
+        <div class="n_body">           
             <div class="body_span body_con">
-                <span><input text="text" class="n_input230"/></span>
-                <span>
-                    <select class="n_sel">
-                        <option>tomcat</option>
-                        <option>tomcat</option>
-                        <option>tomcat</option>
-                    </select>
-                </span>
-                <span><input text="text" class="n_input230"/></span>
-                <span><input text="text" class="n_input230"/></span>
-                <span class="span_last"><input type="checkbox"/>&nbsp;完成后暂停<a href="javascript:;" class="n_bj"></a><a href="javascript:;" class="n_del2"></a></span>
-            </div>           
+                <div class="n_par">
+                    <span><input class="shell_name n_input230" text="text"></span>
+                    <span>
+                        <select class="n_sel">
+                            <option>tomcat</option>
+                            <option>tomcat</option>
+                            <option>tomcat</option>
+                        </select>
+                    </span>
+                    <span><input class="n_input230" text="text"></span>
+                    <span><input class="n_input230" text="text"></span>
+                    <span class="span_last"><input type="checkbox">&nbsp;完成后暂停<a style="color:#000;" class="n_bj" href="javascript:;"></a><a onclick="del(this,'body_con')" id="n_del2" class="n_del2" href="javascript:;"></a></span>
+                </div>
+                <div style="" class="n_child">
+                    <div class="n_btn">
+                        <table>
+                            <tbody><tr>
+                                <th><i class="red">*</i>&nbsp;脚本名称：</th>
+                                <td>
+                                    <label attr="1"><input type="radio" checked="true" name="1">手动输入</label>
+                                    <label attr="2"><input type="radio" name="1">脚本克隆</label>
+                                    <label attr="3"><input type="radio" name="1">本地脚本</label>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                    <div class="n_concent">
+                        <table>
+                            <tbody><tr class="n_radio idx-2">
+                                <th><i class="red">*</i>&nbsp;选择脚本：</th>
+                                <td>
+                                    <select>
+                                        <option>temp</option>
+                                        <option>tereeemp</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr class="n_radio idx-3">
+                                <th><i class="red">*</i>&nbsp;上传脚本：</th>
+                                <td>
+                                    <a href="javascript:;" class="add_rw">上传脚本</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="red">*</i>&nbsp;脚本内容：</th>
+                                <td>
+                                    <textarea class="textarea"></textarea>   
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="red">*</i>&nbsp;超时时间：</th>
+                                <td><input type="text" class="n_input450"></td>
+                            </tr>
+                            <tr>
+                                <th><i class="red">*</i>&nbsp;服务器集：</th>
+                                <td><a href="javascript:;" class="add_rw">选择服务器</a></td>
+                            </tr>
+                        </tbody></table>
+                    </div> 
+                </div>
+            </div>            
             <div class="body_span body_bt">
-                <a class="n_add">+&nbsp;新增节点</a>
+                <a class="n_add shell">+&nbsp;新增节点</a>
             </div>
         </div>
     </div>
+    <!--脚本步骤结束-->
+    <!--文件步骤开始-->
+    <div class="n_box">
+        <div class="n_head file">
+            <div class="n_div_t">
+                <span class="span_t"><i class="red">*</i>&nbsp;步骤名称：</span><input class="n_input230" text="text">
+            </div>
+            <div class="n_r_btn">
+                <a class="n_zk" href="javascript:;"></a>
+                <a onclick="del(this,'n_box')" id="n_del" class="n_del" href="javascript:;"></a>
+            </div>
+        </div>        
+        <div class="body_span body_bt">
+            <span><i class="red">*</i>&nbsp;任务名称</span>
+            <span><i class="red">*</i>&nbsp;执行账户</span>
+            <span><i class="red">*</i>&nbsp;服务器数</span>
+            <span><i class="red">*</i>&nbsp;目标路径</span>
+            <span class="span_last"><i class="red">*</i>&nbsp;操作</span>
+        </div>        
+        <div class="n_body">           
+            <div class="body_span body_con">
+                <div class="n_par">
+                    <span><input class="shell_name n_input230" text="text"></span>
+                    <span>
+                        <select class="n_sel">
+                            <option>tomcat</option>
+                            <option>tomcat</option>
+                            <option>tomcat</option>
+                        </select>
+                    </span>
+                    <span><input class="n_input230" text="text"></span>
+                    <span><input class="n_input230" text="text"></span>
+                    <span class="span_last"><input type="checkbox">&nbsp;完成后暂停<a style="color:#000;" class="n_bj" href="javascript:;"></a><a onclick="del(this,'body_con')" id="n_del2" class="n_del2" href="javascript:;"></a></span>
+                </div>
+                <div style="" class="n_child">
+                    <div class="n_concent">
+                        <table>
+                            <tbody><tr>
+                                <th><i class="red">*</i>&nbsp;选择文件：</th>
+                                <td>
+                                    <a href="javascript:;" class="add_rw rw-bg local">使用本地文件</a>
+                                    <a href="javascript:;" class="add_rw rw-bg service">使用服务器文件</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="red">*</i>&nbsp;文件列表：</th>
+                                <td>
+                                    <table width="950" class="n_table">
+                                        <tr>
+                                            <th width="25%">文件列表</th>
+                                            <th width="25%">服务器地址</th>
+                                            <th width="25%">执行账户</th>
+                                            <th width="25%">操作</th>
+                                        </tr>  
+                                        <tr class="tr-none">
+                                            <td align="center" colspan="4">请添加源文件!</td>
+                                        </tr>
+                                        <tr class="file-add-tr">
+                                            <td>test.txt</td>
+                                            <td>本地文件</td>
+                                            <td>无</td>
+                                            <td><a href="javascript:;" class="file-a" onclick="del(this,'file-add-tr')">删除</a></td>
+                                        </tr>
+                                        <tr class="file-add-tr">
+                                            <td><input class="shell_name n_input230" text="text"></td>
+                                            <td><span>共 0 台</span><a href="javascript:;" class="file-a">添加</a></td>
+                                            <td>
+                                                <select>
+                                                        <option>请选择</option>
+                                                </select>
+                                            </td>
+                                            <td><a href="javascript:;" class="file-a">保存</a><a href="javascript:;" class="file-a" onclick="del(this,'file-add-tr')">删除</a></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="height:25px;" colspan="4"></td>
+                            </tr>
+                            <tr>
+                                <th valign="top"><i class="red">*</i>&nbsp;目标机器：</th>
+                                <td valign="top">
+                                    <a href="javascript:;" class="add_rw chose">选择服务器</a>
+                                    <div class="margin20"></div>
+                                    <table width="950" class="n_table">
+                                        <tbody><tr>
+                                            <th width="25%">IP</th>
+                                            <th width="25%">状态</th>
+                                            <th width="25%">操作</th>
+                                        </tr>  
+                                        <tr class="file-add-tr">
+                                            <td>119.12.13.3</td>
+                                            <td>正常</td>
+                                            <td><a onclick="del(this,'file-add-tr')" class="file-a" href="javascript:;">删除</a></td>
+                                        </tr>
+                                     </tbody></table>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div> 
+                </div>
+            </div>            
+            <div class="body_span body_bt">
+                <a class="n_add file">+&nbsp;新增节点</a>
+            </div>
+        </div>
+    </div>
+    <!--文件步骤结束-->
 </div>
+<!--弹出框开始-->
+<div class="dzsw-pop">
+    <div class="pop-top">
+        <h4 class="floatL pop-title">选择添加服务器</h4>
+        <a class="floatR m-pop-close" href="javascript:;"></a>
+        <div class="clearfix"></div>
+    </div>
+    <div class="pop-con">
+        <!--弹框内容开始-->
+        <div class="con-table n_concent">
+            <div class="margin20">
+                <label><input name="2" type="radio" />通过IP选择服务器</label>
+                <label><input name="2" type="radio" />配置平台</label>
+                <label><input name="2" type="radio" />手动添加</label>
+                <label><input name="2" type="radio" />分组添加</label>
+            </div>
+            <div class="margin20">
+                <input text="text" class="n_input450" placeholder="通过IP、主机名、状态过滤..."/>
+            </div>
+            <table class="n_table margin20" width="100%">
+                <tr>
+                    <th width="5%"><input type="checkbox" /></th>
+                    <th width="20%">平台名称</th>
+                    <th width="20%">IP</th>
+                    <th width="20%">状态</th>
+                    <th>主机名</th>                    
+                </tr>
+                <tr>
+                    <td><input type="checkbox" /></td>
+                    <td>腾讯云</td>
+                    <td>10.12.3.2</td>
+                    <td>正常</td>
+                    <td>demo_91</td>
+                </tr>
+            </table>
+        </div>
+        <div class="con-btn">
+            <a class="m-wrap-btn btn-submit" href="javascript:;">添加</a>
+            <a class="m-wrap-btn btn-cancel" href="javascript:;">取消</a>
+        </div> 
+        <!--弹框内容结束-->
+    </div>
+</div>
+<!--弹出框结束-->
 </body>
 </html>
-<script type="text/javascript">
-    $(function(){
-              
-    })
-</script>
+
 
 
 

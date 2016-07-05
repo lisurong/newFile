@@ -25,21 +25,58 @@
         </div>
     </div>
     <div class="n_b">
-        <a class="add_rw" href="javascript:;">保存</a>
-        <a class="add_rw" href="javascript:;">去执行</a>
+        <a class="add_rw rw-a1" href="javascript:;">保存</a>
+        <a class="add_rw rw-a2" href="javascript:;">去执行</a>
     </div>
 </div>
+<!--弹出框开始-->
+<div class="dzsw-pop" style="display:none;">
+    <div class="pop-top">
+        <h4 class="floatL pop-title">选择添加服务器</h4>
+        <a class="floatR m-pop-close" href="javascript:;"></a>
+        <div class="clearfix"></div>
+    </div>
+    <div class="pop-con">
+        <!--弹框内容开始-->
+        <div class="con-table n_concent">
+            <div class="margin20">
+                <label><input name="2" type="radio" />通过IP选择服务器</label>
+                <label><input name="2" type="radio" />配置平台</label>
+                <label><input name="2" type="radio" />手动添加</label>
+                <label><input name="2" type="radio" />分组添加</label>
+            </div>
+            <div class="margin20">
+                <input text="text" class="n_input450" placeholder="通过IP、主机名、状态过滤..."/>
+            </div>
+            <table class="n_table margin20" width="100%">
+                <tr>
+                    <th width="5%"><input type="checkbox" /></th>
+                    <th width="20%">平台名称</th>
+                    <th width="20%">IP</th>
+                    <th width="20%">状态</th>
+                    <th>主机名</th>                    
+                </tr>
+                <tr>
+                    <td><input type="checkbox" /></td>
+                    <td>腾讯云</td>
+                    <td>10.12.3.2</td>
+                    <td>正常</td>
+                    <td>demo_91</td>
+                </tr>
+            </table>
+        </div>
+        <div class="con-btn">
+            <a class="m-wrap-btn btn-submit" href="javascript:;">添加</a>
+            <a class="m-wrap-btn btn-cancel" href="javascript:;">取消</a>
+        </div> 
+        <!--弹框内容结束-->
+    </div>
+</div>
+<!--弹出框结束-->
 </body>
 </html>
 <!--脚本下拉内容模板-->
 <script id="tpl-shell" type="text/html">
-<div class="body_span body_bt">
-    <span><i class="red">*</i>&nbsp;脚本名称</span>
-    <span><i class="red">*</i>&nbsp;执行账户</span>
-    <span><i class="red">*</i>&nbsp;服务器数</span>
-    <span><i class="red">*</i>&nbsp;脚本参数</span>
-    <span class="span_last"><i class="red">*</i>&nbsp;操作</span>
-</div>
 <div class="body_span body_con">
     <div class="n_par">
         <span><input text="text" class="shell_name n_input230"/></span>
@@ -52,7 +89,7 @@
         </span>
         <span><input text="text" class="n_input230"/></span>
         <span><input text="text" class="n_input230"/></span>
-        <span class="span_last"><input type="checkbox"/>&nbsp;完成后暂停<a href="javascript:;" class="n_bj" style="color:#000;">编辑</a><a href="javascript:;" class="n_del2"></a></span>
+        <span class="span_last"><input type="checkbox"/>&nbsp;完成后暂停<a href="javascript:;" class="n_bj" style="color:#000;"></a><a href="javascript:;" class="n_del2" id="n_del2" onclick="del(this,'body_con')"></a></span>
     </div>
     <div class="n_child" style="display:{{display}};">
         <div class="n_btn">
@@ -60,26 +97,43 @@
                 <tr>
                     <th><i class="red">*</i>&nbsp;脚本名称：</th>
                     <td>
-                        <label><input type="radio" name="1" />手动输入</label>
-                        <label><input type="radio" name="1" />脚本克隆</label>
-                        <label><input type="radio" name="1" />本地脚本</label>
+                        <label attr="1" ><input type="radio" name="1" checked="true" />手动输入</label>
+                        <label attr="2" ><input type="radio" name="1"/>脚本克隆</label>
+                        <label attr="3" ><input type="radio" name="1"/>本地脚本</label>
                     </td>
                 </tr>
             </table>
         </div>
         <div class="n_concent">
             <table>
+                <tr class="n_radio idx-2">
+                    <th><i class="red">*</i>&nbsp;选择脚本：</th>
+                    <td>
+                        <select>
+                            <option>temp</option>
+                            <option>tereeemp</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="n_radio idx-3">
+                    <th><i class="red">*</i>&nbsp;上传脚本：</th>
+                    <td>
+                        <a class="add_rw" href="javascript:;">上传脚本</a>
+                    </td>
+                </tr>
                 <tr>
-                    <th><i class="red">*</i>&nbsp;脚本名称：</th>
+                    <th><i class="red">*</i>&nbsp;脚本内容：</th>
+                    <td>
+                        <textarea class="textarea"></textarea>   
+                    </td>
+                </tr>
+                <tr>
+                    <th><i class="red">*</i>&nbsp;超时时间：</th>
                     <td><input type="text" class="n_input450" /></td>
                 </tr>
                 <tr>
-                    <th><i class="red">*</i>&nbsp;脚本名称：</th>
-                    <td><input type="text" class="n_input450" /></td>
-                </tr>
-                <tr>
-                    <th><i class="red">*</i>&nbsp;脚本名称：</th>
-                    <td><input type="text" class="n_input450" /></td>
+                    <th><i class="red">*</i>&nbsp;服务器集：</th>
+                    <td><a class="add_rw" href="javascript:;">选择服务器</a></td>
                 </tr>
             </table>
         </div> 
@@ -88,13 +142,6 @@
 </script>
 <!--文件下拉内容模板-->
 <script id="tpl-file" type="text/html">
-<div class="body_span body_bt">
-    <span><i class="red">*</i>&nbsp;任务名称</span>
-    <span><i class="red">*</i>&nbsp;执行账户</span>
-    <span><i class="red">*</i>&nbsp;服务器数</span>
-    <span><i class="red">*</i>&nbsp;目标路径</span>
-    <span class="span_last"><i class="red">*</i>&nbsp;操作</span>
-</div>
 <div class="body_span body_con">
     <div class="n_par">
         <span><input text="text" class="shell_name n_input230"/></span>
@@ -107,34 +154,55 @@
         </span>
         <span><input text="text" class="n_input230"/></span>
         <span><input text="text" class="n_input230"/></span>
-        <span class="span_last"><input type="checkbox"/>&nbsp;完成后暂停<a href="javascript:;" class="n_bj" style="color:#000;">编辑</a><a href="javascript:;" class="n_del2"></a></span>
+        <span class="span_last"><input type="checkbox"/>&nbsp;完成后暂停<a href="javascript:;" class="n_bj" style="color:#000;"></a><a href="javascript:;" class="n_del2" id="n_del2" onclick="del(this,'body_con')"></a></span>
     </div>
     <div class="n_child" style="display:{{display}};">
-        <div class="n_btn">
-            <table>
-                <tr>
-                    <th><i class="red">*</i>&nbsp;文件名称：</th>
-                    <td>
-                        <label><input type="radio" name="1" />手动输入</label>
-                        <label><input type="radio" name="1" />脚本克隆</label>
-                        <label><input type="radio" name="1" />本地脚本</label>
-                    </td>
-                </tr>
-            </table>
-        </div>
         <div class="n_concent">
             <table>
                 <tr>
-                    <th><i class="red">*</i>&nbsp;脚本名称：</th>
-                    <td><input type="text" class="n_input450" /></td>
+                    <th><i class="red">*</i>&nbsp;选择文件：</th>
+                    <td>
+                        <a class="add_rw rw-bg local" href="javascript:;">使用本地文件</a>
+                        <a class="add_rw rw-bg service" href="javascript:;">使用服务器文件</a>
+                    </td>
                 </tr>
                 <tr>
-                    <th><i class="red">*</i>&nbsp;脚本名称：</th>
-                    <td><input type="text" class="n_input450" /></td>
+                    <th><i class="red">*</i>&nbsp;文件列表：</th>
+                    <td>
+                        <table class="n_table" width="950">
+                            <tr>
+                                <th width="25%">文件列表</th>
+                                <th width="25%">服务器地址</th>
+                                <th width="25%">执行账户</th>
+                                <th width="25%">操作</th>
+                            </tr>  
+                            <tr class="tr-none">
+                                <td colspan="4" align="center">请添加源文件!</td>
+                            </tr>
+                        </table>
+                    </td>
                 </tr>
                 <tr>
-                    <th><i class="red">*</i>&nbsp;脚本名称：</th>
-                    <td><input type="text" class="n_input450" /></td>
+                    <td colspan="4" style="height:25px;"></td>
+                </tr>
+                <tr>
+                    <th valign="top"><i class="red">*</i>&nbsp;目标机器：</th>
+                    <td valign="top">
+                        <a class="add_rw chose" href="javascript:;" >选择服务器</a>
+                        <div class="margin20"></div>
+                        <table class="n_table" width="950">
+                            <tr>
+                                <th width="25%">IP</th>
+                                <th width="25%">状态</th>
+                                <th width="25%">操作</th>
+                            </tr>  
+                            <tr class="file-add-tr">
+                                <td>119.12.13.3</td>
+                                <td>正常</td>
+                                <td><a href="javascript:;" class="file-a" onclick="del(this,'file-add-tr')">删除</a></td>
+                            </tr>
+                         </table>
+                    </td>
                 </tr>
             </table>
         </div> 
@@ -150,9 +218,27 @@
             </div>
             <div class="n_r_btn">
                 <a href="javascript:;" class="n_zk"></a>
-                <a href="javascript:;" class="n_del"></a>
+                <a href="javascript:;" class="n_del" id="n_del" onclick="del(this,'n_box')"></a>
             </div>
         </div>
+        {{if type == 'shell'}}
+         <div class="body_span body_bt">
+            <span><i class="red">*</i>&nbsp;脚本名称</span>
+            <span><i class="red">*</i>&nbsp;执行账户</span>
+            <span><i class="red">*</i>&nbsp;服务器数</span>
+            <span><i class="red">*</i>&nbsp;脚本参数</span>
+            <span class="span_last"><i class="red">*</i>&nbsp;操作</span>
+        </div>
+        {{/if}}
+        {{if type == 'file'}}
+        <div class="body_span body_bt">
+            <span><i class="red">*</i>&nbsp;任务名称</span>
+            <span><i class="red">*</i>&nbsp;执行账户</span>
+            <span><i class="red">*</i>&nbsp;服务器数</span>
+            <span><i class="red">*</i>&nbsp;目标路径</span>
+            <span class="span_last"><i class="red">*</i>&nbsp;操作</span>
+        </div>
+        {{/if}}
         <div class="n_body">           
             {{if type == 'file'}}
                 {{include 'tpl-file' $value}}
@@ -167,61 +253,35 @@
         </div>
     </div>
 </script>
+<!--添加本地文件模板-->
+<script id="local" type="text/html">
+<tr class="file-add-tr">
+    <td>test.txt</td>
+    <td>本地文件</td>
+    <td>无</td>
+    <td><a href="javascript:;" class="file-a" onclick="del(this,'file-add-tr')">删除</a></td>
+</tr>
+</script>
+<!--添加服务器文件模板-->
+<script id="service" type="text/html">
+<tr class="file-add-tr">
+    <td><input class="shell_name n_input230" text="text"></td>
+    <td><span>共 0 台</span><a href="javascript:;" class="file-a">添加</a></td>
+    <td>
+        <select>
+                <option>请选择</option>
+        </select>
+    </td>
+    <td><a href="javascript:;" class="file-a">保存</a><a href="javascript:;" class="file-a" onclick="del(this,'file-add-tr')">删除</a></td>
+</tr>
+</script>
+<!--添加服务器文件模板-->
+<script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript">  
-$(document).ready(function(){
-
-    //选择新增任务
-    $(document).on('click', '.add_rw', function(){
-        var display = $(this).siblings('.rw_xl').css('display');
-        if(display == 'none'){
-            $(this).siblings('.rw_xl').css('display','block');
-        }else{
-            $(this).siblings('.rw_xl').css('display','none');
-        }
-    })
-    //点击添加文件
-    $(document).on('click', '.add_by_file', function(){
-        var html = template('tpl', {
-            //如果需要初始化数据，在这添加更多
-            type: 'file', // file or shell
-            display: 'none'
-        });
-        $('#n_boxs').append(html);
-    })
-    //点击添加脚本
-    $(document).on('click', '.add_shell', function(){
-        var html = template('tpl', {
-            type: 'shell', // file or shell,
-            display: 'none'
-        });
-        $('#n_boxs').append(html);
-    })
-    //点击脚本名称，编辑，展开收起
-    $(document).on('click', '.shell_name,.n_bj,.n_zk', function(){
-        $('.n_child').hide();
-        $(this).parents('.body_span').find('.n_child').show();
-    })
-    //添加节点
-    $(document).on('click', '.n_add', function(){
-        var type = $(this).hasClass('file');
-        //console.log(type);
-        if(type){
-            var html = template('tpl-file', {
-                display: 'none'
-            });
-            $(this).parents('.n_body').find('.body_con').after(html);
-        }else{
-            var html = template('tpl-file', {
-                display: 'none'
-            });
-            $(this).parents('.n_body').find('.body_con').after(html);
-        }
-    })
-
-
-
-    
-})
+//删除
+function del(obj,parents){
+    $(obj).parents('.'+parents).remove();
+}
 </script>
 
 
