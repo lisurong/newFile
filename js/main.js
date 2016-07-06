@@ -51,7 +51,7 @@ $(document).ready(function(){
             });
             $(this).parents('.n_body').find('.body_bt').before(html);
         }else{
-            var html = template('tpl-file', {
+            var html = template('tpl-shell', {
                 display: 'none'
             });
             $(this).parents('.n_body').find('.body_bt').before(html);
@@ -61,13 +61,13 @@ $(document).ready(function(){
     $(document).on('click', '.local', function(){
         var html = template('local');
         $('.tr-none').hide();
-        $('.n_table').append(html);
+        $('.local-table').append(html);
     })
     //添加服务器文件
     $(document).on('click', '.service', function(){
         var html = template('service');
         $('.tr-none').hide();
-        $('.n_table').append(html);
+        $('.local-table').append(html);
     })
     //脚本名称切换显示
     $(document).on('click', '.n_btn label', function(){

@@ -1,6 +1,5 @@
 @charset "utf-8";
 .n_main{
-	width: 1210px;
 	padding: 20px;
 	border: 1px solid #e6e6e6;
 }
@@ -238,6 +237,10 @@
     border: 1px solid #01a9e8;
     color: #fff;
 }
+.btn-submit:hover{
+	text-decoration: none;
+	color: #fff;
+}
 .m-wrap-btn {
     border-radius: 3px;
     display: inline-block;
@@ -250,4 +253,8 @@
     background: #f3f3f3 none repeat scroll 0 0;
     border: 1px solid #dbdbdb;
     color: #999;
+}
+.btn-cancel:hover{
+	text-decoration: none;
+	color: #999;
 }
